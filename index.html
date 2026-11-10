@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catatan Rantau</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="hero" class="hero">
+    <button id="btnTema" class="tema" type="button">Gelap</button>
+    <h1>Jatah hari ini</h1>
+    <p id="jatah" class="jatah">Rp0</p>
+    <p id="status" class="status"></p>
+    <dl class="ringkas">
+      <div><dt>Sisa uang</dt><dd id="sisa">Rp0</dd></div>
+      <div><dt>Sisa hari bulan ini</dt><dd id="sisaHari">0</dd></div>
+      <div><dt>Terpakai hari ini</dt><dd id="hariIni">Rp0</dd></div>
+    </dl>
+  </header>
+
+  <main>
+    <section>
+      <h2>Uang bulanan</h2>
+      <form id="formBudget">
+        <input id="inBudget" type="number" min="0" placeholder="Uang kiriman bulan ini" required>
+        <button type="submit">Simpan</button>
+      </form>
+      <p class="kecil">Salah ketik? Ubah angkanya lalu simpan lagi.</p>
+    </section>
+
+    <section>
+      <h2>Catat pengeluaran</h2>
+      <form id="formKeluar">
+        <input id="inKet" type="text" placeholder="Beli apa?" required>
+        <input id="inJumlah" type="number" min="1" placeholder="Jumlah (Rp)" required>
+        <select id="inKat" aria-label="Kategori"></select>
+        <input id="inTglKeluar" type="date" required aria-label="Tanggal">
+        <button id="okKeluar" type="submit">Tambah</button>
+        <button id="batalKeluar" type="button" class="sekunder" hidden>Batal</button>
+      </form>
+      <ul id="listKeluar" class="daftar gulir"></ul>
+    </section>
+
+    <section>
+      <h2>Pengeluaran per kategori</h2>
+      <div id="grafikKat"></div>
+    </section>
+
+    <section>
+      <h2>Tagihan</h2>
+      <form id="formTagihan">
+        <input id="inTagihan" type="text" placeholder="Kos, WiFi, listrik..." required>
+        <input id="tglTagihan" type="date" required>
+        <button id="okTagihan" type="submit">Tambah</button>
+        <button id="batalTagihan" type="button" class="sekunder" hidden>Batal</button>
+      </form>
+      <ul id="listTagihan" class="daftar"></ul>
+    </section>
+
+    <section>
+      <h2>Tugas kuliah</h2>
+      <form id="formTugas">
+        <input id="inTugas" type="text" placeholder="Nama tugas" required>
+        <input id="tglTugas" type="date" required>
+        <button id="okTugas" type="submit">Tambah</button>
+        <button id="batalTugas" type="button" class="sekunder" hidden>Batal</button>
+      </form>
+      <ul id="listTugas" class="daftar"></ul>
+    </section>
+
+    <section>
+      <h2>Data</h2>
+      <div class="aksi">
+        <button id="btnEkspor" type="button">Ekspor ke Excel</button>
+        <button id="btnReset" type="button" class="bahaya">Reset semua data</button>
+      </div>
+      <p class="kecil">Ekspor menghasilkan file .csv yang bisa dibuka di Excel.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
